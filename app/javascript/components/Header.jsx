@@ -19,7 +19,7 @@ const Logo = styled(Link)`
   }
 `;
 
-const Navigation = () => (
+const Header = () => (
   <header>
     <Navbar fixedTop inverse>
       <div className="container">
@@ -36,4 +36,4 @@ const Navigation = () => (
   </header>
 );
 
-export default Navigation;
+export default Header;
