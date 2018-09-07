@@ -1,9 +1,9 @@
 import React from "react";
 
-const Home = () => (
+const Home = props => (
   <html>
     <head>
-      <title>Home | Ruby on Rails Tutorial Sample App</title>
+      <title> {props.title} | Ruby on Rails Tutorial Sample App</title>
     </head>
     <body>
       <h1>Sample App</h1>
