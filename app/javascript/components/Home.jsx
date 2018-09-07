@@ -18,35 +18,6 @@ const CenterJumbotron = styled(Jumbotron)`
     margin-bottom: 10px;
   }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    line-height: 1;
-  }
-
-  h1 {
-    font-size: 3em;
-    letter-spacing: -2px;
-    margin-bottom: 30px;
-    text-align: center;
-  }
-
-  h2 {
-    font-size: 1.2em;
-    letter-spacing: -1px;
-    margin-bottom: 30px;
-    text-align: center;
-    font-weight: normal;
-    color: #777;
-  }
-
-  p {
-    font-size: 1.1em;
-    line-height: 1.7em;
-  }
 `;
 
 const Home = () => (
@@ -58,11 +29,9 @@ const Home = () => (
       <a href="https://railstutorial.jp/">Ruby on Rails Tutorial</a>
       sample application.
     </h2>
-    <BrowserRouter>
-      <Link to="#" className="btn btn-lg btn-primary">
-        Sign up now!
-      </Link>
-    </BrowserRouter>
+    <Link to="/signup" className="btn btn-lg btn-primary">
+      Sign up now!
+    </Link>
   </CenterJumbotron>
 );
 
