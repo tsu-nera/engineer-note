@@ -1,6 +1,6 @@
 import React from "react";
 import { Navbar, Nav, NavItem } from "react-bootstrap";
-import { Link, BrowserRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const Logo = styled(Link)`
@@ -23,13 +23,17 @@ const Header = () => (
   <header>
     <Navbar fixedTop inverse>
       <div className="container">
-        <BrowserRouter>
-          <Logo to="#">Engineer Note</Logo>
-        </BrowserRouter>
+        <Logo to="/">Engineer Note</Logo>
         <Nav pullRight>
-          <NavItem>Home</NavItem>
-          <NavItem>Help</NavItem>
-          <NavItem>About</NavItem>
+          <NavItem>
+            <Link to="/">Home</Link>
+          </NavItem>
+          <NavItem>
+            <Link to="/help">Help</Link>
+          </NavItem>
+          <NavItem>
+            <Link to="/about">About</Link>
+          </NavItem>
         </Nav>
       </div>
     </Navbar>
