@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar, Nav } from "react-bootstrap";
+import { Navbar, Nav, NavItem } from "react-bootstrap";
 import styled from "styled-components";
 
 const Logo = styled.a`
@@ -23,16 +23,10 @@ const Header = () => (
     <Navbar fixedTop inverse>
       <div className="container">
         <Logo href="/">Engineer Note</Logo>
-        <Nav pullRight>
-          <li>
-            <a href="/">Home</a>
-          </li>
-          <li>
-            <a href="/help">Help</a>
-          </li>
-          <li>
-            <a href="/about">About</a>
-          </li>
+        <Nav activeKey={1} pullRight>
+          <NavItem href="/">Home</NavItem>
+          <NavItem href="/help">Help</NavItem>
+          <NavItem href="/about">About</NavItem>
         </Nav>
       </div>
     </Navbar>

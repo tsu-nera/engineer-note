@@ -9,8 +9,6 @@ import {
 } from "react-rails-form-helpers";
 import styled from "styled-components";
 
-import ErrorMessages from "./ErrorMessages";
-
 const StyledForm = styled.div`
   input,
   textarea,
@@ -33,7 +31,6 @@ const Signup = () => (
     <div className="row">
       <div className="col-md-6 col-md-offset-3">
         <StyledForm>
-          <ErrorMessages />
           <FormFor url="/users" method="post" name="user">
             <Label htmlFor="name">name</Label>
             <TextField name="name" className="form-control" />

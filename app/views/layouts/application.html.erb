@@ -16,6 +16,7 @@
   <body>
   <%= react_component('Header') %>
     <div class="container">
+      <%= react_component 'FlashMessages', messages: flash_messages %>
       <%= yield %>
       <%= react_component('Footer') %>
     </div>
