@@ -1,5 +1,4 @@
 import React from "react";
-import { BrowserRouter, Link } from "react-router-dom";
 import { Jumbotron } from "react-bootstrap";
 import styled from "styled-components";
 
@@ -17,7 +16,6 @@ const CenterJumbotron = styled(Jumbotron)`
   h1 {
     margin-bottom: 10px;
   }
-
 `;
 
 const Home = () => (
@@ -29,9 +27,9 @@ const Home = () => (
       <a href="https://railstutorial.jp/">Ruby on Rails Tutorial</a>
       sample application.
     </h2>
-    <Link to="/signup" className="btn btn-lg btn-primary">
+    <a href="/signup" className="btn btn-lg btn-primary">
       Sign up now!
-    </Link>
+    </a>
   </CenterJumbotron>
 );
 

@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const StyledFooter = styled.footer`
@@ -40,10 +39,10 @@ const Footer = () => (
     <nav>
       <ul>
         <li>
-          <Link to="/about">About</Link>
+          <a href="/about">About</a>
         </li>
         <li>
-          <Link to="/contact">Contact</Link>
+          <a href="/contact">Contact</a>
         </li>
         <li>
           <a href="http://news.railstutorial.org/">News</a>

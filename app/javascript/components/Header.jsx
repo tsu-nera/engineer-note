@@ -1,9 +1,8 @@
 import React from "react";
-import { Navbar, Nav, NavItem } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Navbar, Nav } from "react-bootstrap";
 import styled from "styled-components";
 
-const Logo = styled(Link)`
+const Logo = styled.a`
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
@@ -23,17 +22,17 @@ const Header = () => (
   <header>
     <Navbar fixedTop inverse>
       <div className="container">
-        <Logo to="/">Engineer Note</Logo>
+        <Logo href="/">Engineer Note</Logo>
         <Nav pullRight>
-          <NavItem>
-            <Link to="/">Home</Link>
-          </NavItem>
-          <NavItem>
-            <Link to="/help">Help</Link>
-          </NavItem>
-          <NavItem>
-            <Link to="/about">About</Link>
-          </NavItem>
+          <li>
+            <a href="/">Home</a>
+          </li>
+          <li>
+            <a href="/help">Help</a>
+          </li>
+          <li>
+            <a href="/about">About</a>
+          </li>
         </Nav>
       </div>
     </Navbar>

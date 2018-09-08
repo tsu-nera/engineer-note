@@ -1,0 +1,2 @@
+<% provide(:title, @user.name) %>
+<%= react_component('User', {gravatar: gravatar_for(@user), name: @user.name}) %>
