@@ -9,6 +9,8 @@ import {
 } from "react-rails-form-helpers";
 import styled from "styled-components";
 
+import ErrorMessages from "./ErrorMessages";
+
 const StyledForm = styled.div`
   input,
   textarea,
@@ -31,15 +33,19 @@ const Signup = () => (
     <div className="row">
       <div className="col-md-6 col-md-offset-3">
         <StyledForm>
+          <ErrorMessages />
           <FormFor url="/users" method="post" name="user">
             <Label htmlFor="name">name</Label>
-            <TextField name="name" />
+            <TextField name="name" className="form-control" />
             <Label htmlFor="email">email</Label>
-            <EmailField name="email" />
+            <EmailField name="email" className="form-control" />
             <Label htmlFor="password">password</Label>
-            <PasswordField name="password" />
+            <PasswordField name="password" className="form-control" />
             <Label htmlFor="password_confirmation">Confirmation</Label>
-            <PasswordField name="password_confirmation" />
+            <PasswordField
+              name="password_confirmation"
+              className="form-control"
+            />
             <Submit
               name="commit"
               value="Create my account"
