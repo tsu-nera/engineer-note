@@ -1,9 +1,54 @@
 import React from "react";
+import {
+  FormFor,
+  Label,
+  TextField,
+  EmailField,
+  PasswordField,
+  Submit
+} from "react-rails-form-helpers";
+import styled from "styled-components";
+
+const StyledForm = styled.div`
+  input,
+  textarea,
+  select,
+  .uneditable-input {
+    border: 1px solid #bbb;
+    width: 100%;
+    margin-bottom: 15px;
+    @include box_sizing;
+  }
+
+  input {
+    height: auto !important;
+  }
+`;
 
 const Signup = () => (
   <div>
     <h1>Sign up</h1>
-    <p>This will be a signup page for new users.</p>
+    <div className="row">
+      <div className="col-md-6 col-md-offset-3">
+        <StyledForm>
+          <FormFor url="/users" method="post" name="user">
+            <Label htmlFor="name">name</Label>
+            <TextField name="name" />
+            <Label htmlFor="email">email</Label>
+            <EmailField name="email" />
+            <Label htmlFor="password">password</Label>
+            <PasswordField name="password" />
+            <Label htmlFor="password_confirmation">Confirmation</Label>
+            <PasswordField name="password_confirmation" />
+            <Submit
+              name="commit"
+              value="Create my account"
+              className="btn btn-primary"
+            />
+          </FormFor>
+        </StyledForm>
+      </div>
+    </div>
   </div>
 );
 
