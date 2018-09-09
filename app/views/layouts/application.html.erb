@@ -14,7 +14,7 @@
     <%= react_component('Shim') %>
   </head>
   <body>
-  <%= react_component('Header') %>
+  <%= react_component('Header',  {login: yield(:login)}) %>
     <div class="container">
       <%= react_component 'FlashMessages', messages: flash_messages %>
       <%= yield %>

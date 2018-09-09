@@ -18,7 +18,40 @@ const Logo = styled.a`
   }
 `;
 
-const Header = () => (
+const LoginHeader = props => {
+  if (props.login) {
+    return (
+      <Nav>
+        <NavItem href="#">Users</NavItem>
+        <li className="dropdown">
+          <a href="#" className="dropdown-toggle" data-toggle="dropdown">
+            Account <b className="caret" />
+          </a>
+          <ul className="dropdown-menu">
+            <li>
+              <a>Profile</a>
+            </li>
+            <li>
+              <a href="#">Settings</a>
+            </li>
+            <li className="divider" />
+            <li>
+              <a>Log out</a>
+            </li>
+          </ul>
+        </li>
+      </Nav>
+    );
+  } else {
+    return (
+      <li>
+        <a href="/login">Log in</a>
+      </li>
+    );
+  }
+};
+
+const Header = props => (
   <header>
     <Navbar fixedTop inverse>
       <div className="container">
@@ -26,7 +59,7 @@ const Header = () => (
         <Nav activeKey={1} pullRight>
           <NavItem href="/">Home</NavItem>
           <NavItem href="/help">Help</NavItem>
-          <NavItem href="/about">About</NavItem>
+          <LoginHeader login={props.login} />
         </Nav>
       </div>
     </Navbar>
