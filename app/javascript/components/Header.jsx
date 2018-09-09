@@ -31,7 +31,7 @@ const LoginHeader = props => {
         <NavItem href="#">Users</NavItem>
         <NavItem>Profile</NavItem>
         <NavItem>Settings</NavItem>
-        <NavItem>Log out</NavItem>
+        <NavItem data-method="delete" href="/logout" rel="nofollow">Log out</NavItem>
       </Nav>
     );
   }

@@ -1,4 +1,6 @@
 <% provide(:title, 'Sign up') %>
+<% provide(:login, logged_in?) %>
+
 <% if @user.errors.any? %>
   <div id="error_explanation">
     <div class="alert alert-danger">
