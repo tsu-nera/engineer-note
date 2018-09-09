@@ -1,5 +1,11 @@
 import React from "react";
-import { Navbar, Nav, NavItem } from "react-bootstrap";
+import {
+  Navbar,
+  Nav,
+  NavItem,
+  DropdownButton,
+  MenuItem
+} from "react-bootstrap";
 import styled from "styled-components";
 
 const Logo = styled.a`
@@ -23,32 +29,18 @@ const LoginHeader = props => {
     return (
       <Nav>
         <NavItem href="#">Users</NavItem>
-        <li className="dropdown">
-          <a href="#" className="dropdown-toggle" data-toggle="dropdown">
-            Account <b className="caret" />
-          </a>
-          <ul className="dropdown-menu">
-            <li>
-              <a>Profile</a>
-            </li>
-            <li>
-              <a href="#">Settings</a>
-            </li>
-            <li className="divider" />
-            <li>
-              <a>Log out</a>
-            </li>
-          </ul>
-        </li>
+        <NavItem>Profile</NavItem>
+        <NavItem>Settings</NavItem>
+        <NavItem>Log out</NavItem>
       </Nav>
     );
-  } else {
-    return (
-      <li>
-        <a href="/login">Log in</a>
-      </li>
-    );
   }
+
+  return (
+    <li>
+      <a href="/login">Log in</a>
+    </li>
+  );
 };
 
 const Header = props => (
