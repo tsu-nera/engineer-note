@@ -35,7 +35,6 @@ const Login = () => (
             <EmailField name="email" className="form-control" />
             <Label htmlFor="session_password">password</Label>
             <PasswordField name="password" className="form-control" />
-            <Submit name="commit" value="Log in" className="btn btn-primary" />
           </FormFor>
           <p>
             New user? <a href="/signup">Sign up now!</a>
