@@ -21,6 +21,14 @@ module SessionsHelper
     end
   end
 
+  def current_user_id
+    if logged_in?
+      current_user.id
+    else
+      0
+    end
+  end
+
   def logged_in?
     !current_user.nil?
   end

@@ -29,9 +29,13 @@ const LoginHeader = props => {
     return (
       <Nav>
         <NavItem href="#">Users</NavItem>
-        <NavItem>Profile</NavItem>
-        <NavItem>Settings</NavItem>
-        <NavItem data-method="delete" href="/logout" rel="nofollow">Log out</NavItem>
+        <NavItem href={`/users/${unescape(props.user_id)}`}>Profile</NavItem>
+        <NavItem href={`/users/${unescape(props.user_id)}/edit`}>
+          Settings
+        </NavItem>
+        <NavItem data-method="delete" href="/logout" rel="nofollow">
+          Log out
+        </NavItem>
       </Nav>
     );
   }
@@ -51,7 +55,7 @@ const Header = props => (
         <Nav activeKey={1} pullRight>
           <NavItem href="/">Home</NavItem>
           <NavItem href="/help">Help</NavItem>
-          <LoginHeader login={props.login} />
+          <LoginHeader login={props.login} user_id={props.user_id} />
         </Nav>
       </div>
     </Navbar>

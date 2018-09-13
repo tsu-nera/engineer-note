@@ -1,4 +1,4 @@
-<% provide(:title, 'Sign up') %>
+<% provide(:title, 'Edit user') %>
 <% provide(:login, logged_in?) %>
 <% provide(:user_id, current_user_id) %>
 
@@ -14,4 +14,4 @@
     </ul>
   </div>
 <% end %>
-<%= react_component('Signup') %>
+<%= react_component('EditUser', {id: @user.id, name: @user.name, email: @user.email, gravatar: gravatar_for(@user) }) %>
