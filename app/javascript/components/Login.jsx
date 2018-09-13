@@ -4,7 +4,8 @@ import {
   Label,
   EmailField,
   PasswordField,
-  Submit
+  Submit,
+  CheckBox
 } from "react-rails-form-helpers";
 import styled from "styled-components";
 
@@ -24,6 +25,11 @@ const StyledForm = styled.div`
   }
 `;
 
+const StyledCheckBox = styled(CheckBox)`
+  width: initial !important;
+  margin-left: 3px !important;
+`;
+
 const Login = () => (
   <div>
     <h1>Log in</h1>
@@ -35,6 +41,9 @@ const Login = () => (
             <EmailField name="email" className="form-control" />
             <Label htmlFor="session_password">password</Label>
             <PasswordField name="password" className="form-control" />
+            <Label htmlFor="session_remember">remember me</Label>
+            <StyledCheckBox name="remember"/>
+            <Submit name="commit" value="Log in" className="btn btn-primary" />
           </FormFor>
           <p>
             New user? <a href="/signup">Sign up now!</a>
