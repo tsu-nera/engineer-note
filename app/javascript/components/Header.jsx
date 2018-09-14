@@ -3,8 +3,6 @@ import {
   Navbar,
   Nav,
   NavItem,
-  DropdownButton,
-  MenuItem
 } from "react-bootstrap";
 import styled from "styled-components";
 
@@ -29,8 +27,10 @@ const LoginHeader = props => {
     return (
       <Nav>
         <NavItem href="#">Users</NavItem>
-        <NavItem href={`/users/${unescape(props.user_id)}`}>Profile</NavItem>
-        <NavItem href={`/users/${unescape(props.user_id)}/edit`}>
+        <NavItem href={`/users/${(props.user_id)}`}>
+          Profile
+        </NavItem>
+        <NavItem href={`/users/${(props.user_id)}/edit`}>
           Settings
         </NavItem>
         <NavItem data-method="delete" href="/logout" rel="nofollow">
