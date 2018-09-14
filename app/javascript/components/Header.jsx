@@ -27,10 +27,10 @@ const LoginHeader = props => {
     return (
       <Nav>
         <NavItem href="#">Users</NavItem>
-        <NavItem href={`/users/${(props.user_id)}`}>
+        <NavItem href={`/users/${props.user_id.charCodeAt(0)}`}>
           Profile
         </NavItem>
-        <NavItem href={`/users/${(props.user_id)}/edit`}>
+        <NavItem href={`/users/${props.user_id.charCodeAt(0)}/edit`}>
           Settings
         </NavItem>
         <NavItem data-method="delete" href="/logout" rel="nofollow">
