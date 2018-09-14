@@ -31,7 +31,7 @@ const EditUser = props => (
     <div className="row">
       <div className="col-md-6 col-md-offset-3">
         <StyledForm>
-          <FormFor url={`/users/${props.id}`} method="patch" name="edit-user">
+          <FormFor url={`/users/${props.id}`} method="patch" name="user">
             <Label htmlFor="name">name</Label>
             <TextField
               name="name"
@@ -60,7 +60,11 @@ const EditUser = props => (
         </StyledForm>
         <div className="gravatar_edit">
           <div dangerouslySetInnerHTML={{ __html: props.gravatar }} />
-          <a href="http://gravatar.com/emails" rel="noopener noreferrer" target="_blank">
+          <a
+            href="http://gravatar.com/emails"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
             change
           </a>
         </div>
