@@ -1,0 +1,7 @@
+<% provide(:title, 'All users') %>
+<% provide(:login, logged_in?) %>
+<% provide(:user_id, current_user_id) %>
+
+<%= react_component('Users',
+    {users_gravatar: @users.map{ |user| gravatar_for(user, size: 50)},
+     users_link: @users.map{ |user| link_for(user)}}) %>
