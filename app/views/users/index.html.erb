@@ -6,6 +6,7 @@
 
 <%= react_component('Users',
     {users_gravatar: @users.map{ |user| gravatar_for(user, size: 50)},
-     users_link: @users.map{ |user| link_for(user)}}) %>
+     users_link: @users.map{ |user| link_for(user)}})
+%>
 
 <%= will_paginate %>

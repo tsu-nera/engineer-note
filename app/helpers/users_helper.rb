@@ -7,6 +7,11 @@ module UsersHelper
   end
 
   def link_for(user)
-    "<a href=\"/users/#{user.id}\">#{user.name}</a>"
+    if current_user.admin? && !current_user?(user)
+      tag = " | <a href=\"/users/#{user.id}\" data-method=\"delete\" rel=\"nofollow\" data-confirm=\"Are you sure?\">delete</a>"
+    else
+      tag = ""
+    end
+    "<a href=\"/users/#{user.id}\">#{user.name}</a> #{tag}"
   end
 end
