@@ -17,16 +17,13 @@ const Users = props => (
   <div>
     <h1>All users</h1>
     <StyledUsers>
-      <li>
-        {zip(props.users_gravatar, props.users_link).map((img, link) => {
-          return (
-            <div>
-              <div dangerouslySetInnerHTML={{ __html: img }} />
-              <div dangerouslySetInnerHTML={{ __html: link }} />
-            </div>
-          );
-        })}
-      </li>
+      {zip(props.users_gravatar, props.users_link).map(img => {
+        return (
+          <li>
+            <div dangerouslySetInnerHTML={{ __html: img }} />
+          </li>
+        );
+      })}
     </StyledUsers>
   </div>
 );
