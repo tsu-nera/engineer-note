@@ -26,7 +26,7 @@ const LoginHeader = props => {
   if (props.login) {
     return (
       <Nav>
-        <NavItem href="#">Users</NavItem>
+        <NavItem href="/users">Users</NavItem>
         <NavItem href={`/users/${props.user_id.charCodeAt(0)}`}>
           Profile
         </NavItem>
