@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import MicroPostList from "./MicroPostList";
 
 const StyledUser = styled.div`
   aside {
@@ -44,10 +45,16 @@ const User = props => (
       <aside className="col-md-4">
         <section className="user_info">
           <h1>
-            <div dangerouslySetInnerHTML={{ __html: props.gravatar }} />
+            <div dangerouslySetInnerHTML={{__html: props.gravatar}}/>
             {props.name}
           </h1>
         </section>
+      </aside>
+      <aside className="col-md-8">
+        <MicroPostList
+          gravatar={props.gravatar}
+          microposts={props.microposts}
+        />
       </aside>
     </div>
   </StyledUser>
