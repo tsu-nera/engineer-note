@@ -52,6 +52,8 @@ const User = props => (
       </aside>
       <aside className="col-md-8">
         <MicroPostList
+          name={props.name}
+          user_id={props.user_id}
           gravatar={props.gravatar}
           microposts={props.microposts}
         />

@@ -56,11 +56,9 @@ const MicroPostList = props => {
           {props.microposts.map(micropost => (
             <li key={`micropost-${micropost.id}`}>
               <div dangerouslySetInnerHTML={{ __html: props.gravatar }} />
-              {/*<span className="user">*/}
-              {/*<a href={`/users/${micropost.user.id}`}>*/}
-              {/*{micropost.user.name}*/}
-              {/*</a>*/}
-              {/*</span>*/}
+              <span className="user">
+                <a href={`/users/${props.user_id}`}>{props.name}</a>
+              </span>
               <span className="content">{micropost.content}</span>
               <span className="timestamp">Posted {micropost.created_at}</span>
             </li>
