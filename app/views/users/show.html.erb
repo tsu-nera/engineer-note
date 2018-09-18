@@ -2,4 +2,10 @@
 <% provide(:login, logged_in?) %>
 <% provide(:user_id, current_user_id) %>
 
-<%= react_component('User', {gravatar: gravatar_for(@user), name: @user.name, user_id: @user.id, microposts: feed_data(@microposts)}) %>
+<%= react_component('User',
+                    {gravatar: gravatar_for(@user),
+                     name: @user.name,
+                     user_id: @user.id,
+                     microposts: feed_data(@microposts),
+                     login: logged_in?,
+                     stats: stats_data(@user)}) %>

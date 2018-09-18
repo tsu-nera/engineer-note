@@ -14,4 +14,13 @@ module UsersHelper
     end
     "<a href=\"/users/#{user.id}\">#{user.name}</a> #{tag}"
   end
+
+  def stats_data(user)
+    s = {}
+    s[:following_user_path] = following_user_path(user)
+    s[:followers_user_path] = followers_user_path(user)
+    s[:following_count] = user.following.count
+    s[:followers_count] = user.followers.count
+    s
+  end
 end

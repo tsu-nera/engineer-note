@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { FormFor, Submit, TextArea } from "react-rails-form-helpers";
 import Welcome from "./Welcome";
 import MicroPostList from "./MicroPostList";
+import Stats from "./Stats";
 
 const StyledUser = styled.div`
   aside {
@@ -53,6 +54,9 @@ const Home = props => {
               <span>
                 <a href={`/users/${props.user_id}`}>view my profile</a>
               </span>
+            </section>
+            <section className="stats">
+              <Stats stats={props.stats} />
             </section>
             <section className="micropost_form">
               <FormFor url="/microposts" method="post" name="micropost">

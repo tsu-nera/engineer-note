@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import MicroPostList from "./MicroPostList";
+import Stats from "./Stats";
+import FollowForm from "./FollowForm";
 
 const StyledUser = styled.div`
   aside {
@@ -49,8 +51,12 @@ const User = props => (
             {props.name}
           </h1>
         </section>
+        <section className="stats">
+          <Stats stats={props.stats} />
+        </section>
       </aside>
       <aside className="col-md-8">
+        <FollowForm login={props.login} user_id={props.user_id} />
         <h3>Microposts ({props.microposts.length})</h3>
         <MicroPostList microposts={props.microposts} />
       </aside>
