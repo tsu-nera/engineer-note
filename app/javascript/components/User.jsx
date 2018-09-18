@@ -56,7 +56,13 @@ const User = props => (
         </section>
       </aside>
       <aside className="col-md-8">
-        <FollowForm login={props.login} user_id={props.user_id} />
+        <FollowForm
+          me={props.me}
+          login={props.login}
+          user_id={props.user_id}
+          follow={props.follow}
+          unfollow_id={props.unfollow_id}
+        />
         <h3>Microposts ({props.microposts.length})</h3>
         <MicroPostList microposts={props.microposts} />
       </aside>

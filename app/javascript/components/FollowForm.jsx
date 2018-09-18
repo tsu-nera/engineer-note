@@ -15,6 +15,22 @@ const FollowForm = props => {
     return <div />;
   }
 
+  if (props.me) {
+    return <div />;
+  }
+
+  if (props.follow) {
+    return (
+      <StyledFormFor
+        url={`/relationships/${props.unfollow_id}`}
+        method="delete"
+        name="unfollow"
+      >
+        <Submit name="unfollow" value="Unfollow" className="btn" />
+      </StyledFormFor>
+    );
+  }
+
   return (
     <StyledFormFor url="/relationships" method="post" name="follow">
       <input

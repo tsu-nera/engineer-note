@@ -8,4 +8,7 @@
                      user_id: @user.id,
                      microposts: feed_data(@microposts),
                      login: logged_in?,
+                     me: current_user.id == @user.id,
+                     follow: current_user.following?(@user),
+                     unfollow_id: @unfollow_id,
                      stats: stats_data(@user)}) %>
