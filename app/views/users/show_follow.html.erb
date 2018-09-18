@@ -1,0 +1,11 @@
+<% provide(:title, @title) %>
+<%= react_component('Follow',
+                    {gravatar: gravatar_for(@user),
+                     gravatars: @users.map{|user| gravatar_for(user, size: 30)},
+                     links: @users.map{ |user| link_for(user)},
+                     name: @user.name,
+                     user_id: @user.id,
+                     users: @users,
+                     login: logged_in?,
+                     title: @title,
+                     stats: stats_data(@user)}) %>
