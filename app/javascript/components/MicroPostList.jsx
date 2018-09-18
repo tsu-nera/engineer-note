@@ -61,7 +61,17 @@ const MicroPostList = props => {
                 </a>
               </span>
               <span className="content">{micropost.content}</span>
-              <span className="timestamp">Posted {micropost.created_at}</span>
+              <span className="timestamp">
+                Posted {micropost.created_at} -
+                <a
+                  href={`/microposts/${micropost.id}`}
+                  data-method="delete"
+                  rel="nofollow"
+                  data-confirm="Are you sure?"
+                >
+                  delete
+                </a>
+              </span>
             </li>
           ))}
         </ol>
