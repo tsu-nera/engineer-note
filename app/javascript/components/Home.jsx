@@ -66,6 +66,10 @@ const Home = props => {
             </section>
           </aside>
         </StyledUser>
+        <div className="col-md-8">
+          <h3>Micropost Feed</h3>
+
+        </div>
       </div>
     );
   } else {
