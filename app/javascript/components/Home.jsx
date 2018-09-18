@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import {FormFor, Submit, TextArea} from "react-rails-form-helpers";
+import { FormFor, Submit, TextArea } from "react-rails-form-helpers";
+import Welcome from "./Welcome";
+import MicroPostList from "./MicroPostList";
 
 const StyledUser = styled.div`
   aside {
@@ -46,7 +48,7 @@ const Home = props => {
         <StyledUser>
           <aside className="col-md-4">
             <section className="user_info">
-              <div dangerouslySetInnerHTML={{__html: props.gravatar}}/>
+              <div dangerouslySetInnerHTML={{ __html: props.gravatar }} />
               <h1>{props.name}</h1>
               <span>
                 <a href={`/users/${props.user_id}`}>view my profile</a>
@@ -55,7 +57,7 @@ const Home = props => {
             <section className="micropost_form">
               <FormFor url="/microposts" method="post" name="micropost">
                 <div className="field">
-                  <TextArea name="content" className="form-control"/>
+                  <TextArea name="content" className="form-control" />
                 </div>
                 <Submit
                   name="commit"
@@ -68,12 +70,12 @@ const Home = props => {
         </StyledUser>
         <div className="col-md-8">
           <h3>Micropost Feed</h3>
-
+          <MicroPostList microposts={props.microposts} />
         </div>
       </div>
     );
   } else {
-    return <Welcome/>;
+    return <Welcome />;
   }
 };
 

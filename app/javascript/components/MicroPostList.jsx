@@ -51,13 +51,14 @@ const MicroPostList = props => {
   if (props.microposts !== undefined) {
     return (
       <StyledMicroPosts>
-        <h3>Microposts ({props.microposts.length})</h3>
         <ol className="microposts">
           {props.microposts.map(micropost => (
             <li key={`micropost-${micropost.id}`}>
-              <div dangerouslySetInnerHTML={{ __html: props.gravatar }} />
+              <div dangerouslySetInnerHTML={{ __html: micropost.gravatar }} />
               <span className="user">
-                <a href={`/users/${props.user_id}`}>{props.name}</a>
+                <a href={`/users/${micropost.user_id}`}>
+                  {micropost.user_name}
+                </a>
               </span>
               <span className="content">{micropost.content}</span>
               <span className="timestamp">Posted {micropost.created_at}</span>

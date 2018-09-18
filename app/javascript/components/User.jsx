@@ -45,18 +45,14 @@ const User = props => (
       <aside className="col-md-4">
         <section className="user_info">
           <h1>
-            <div dangerouslySetInnerHTML={{__html: props.gravatar}}/>
+            <div dangerouslySetInnerHTML={{ __html: props.gravatar }} />
             {props.name}
           </h1>
         </section>
       </aside>
       <aside className="col-md-8">
-        <MicroPostList
-          name={props.name}
-          user_id={props.user_id}
-          gravatar={props.gravatar}
-          microposts={props.microposts}
-        />
+        <h3>Microposts ({props.microposts.length})</h3>
+        <MicroPostList microposts={props.microposts} />
       </aside>
     </div>
   </StyledUser>

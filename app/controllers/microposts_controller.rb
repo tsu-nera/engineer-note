@@ -1,8 +1,8 @@
 class MicropostsController < ApplicationController
-  before_action :logged_in_user, only [:create, :destroy]
+  before_action :logged_in_user, only: [:create, :destroy]
 
   def create
-    @micropost = current_user.microposts.build(micropst_params)
+    @micropost = current_user.microposts.build(micropost_params)
     if @micropost.save
       flash[:success] = "Micropost created!"
       redirect_to root_url
@@ -17,6 +17,6 @@ class MicropostsController < ApplicationController
   private
 
   def micropost_params
-    params.require(:micropst).permit(:content)
+    params.require(:micropost).permit(:content)
   end
 end
