@@ -51,7 +51,7 @@ const Header = props => (
   <header>
     <Navbar fixedTop inverse>
       <div className="container">
-        <Logo href="/">Engineer Note</Logo>
+        <Logo href="/">Rails Tutorials</Logo>
         <Nav activeKey={1} pullRight>
           <NavItem href="/">Home</NavItem>
           <NavItem href="/help">Help</NavItem>

@@ -1,4 +1,7 @@
 <% provide(:title, @title) %>
+<% provide(:login, logged_in?) %>
+<% provide(:user_id, current_user_id) %>
+
 <%= react_component('Follow',
                     {gravatar: gravatar_for(@user),
                      gravatars: @users.map{|user| gravatar_for(user, size: 30)},
