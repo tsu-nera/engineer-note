@@ -1,5 +1,6 @@
 module MicropostsHelper
   def feed_data(microposts)
+    return [] if microposts.nil?
     ret = []
     microposts.each do |micropost|
       m = {}

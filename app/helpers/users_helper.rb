@@ -1,5 +1,6 @@
 module UsersHelper
   def gravatar_for(user, options = { size: 80 })
+    return if user.nil?
     gravatar_id = Digest::MD5::hexdigest(user.email.downcase)
     size = options[:size]
     gravatar_url = "https://secure.gravatar.com/avatar/#{gravatar_id}?s=#{size}"
@@ -17,6 +18,7 @@ module UsersHelper
 
   def stats_data(user)
     s = {}
+    return s if user.nil?
     s[:following_user_path] = following_user_path(user)
     s[:followers_user_path] = followers_user_path(user)
     s[:following_count] = user.following.count
